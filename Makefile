@@ -8,7 +8,7 @@ all:build
 build: main.o vector.o
 	$(CC) $(CFLAGS) -o $(OUT) main.c vector.c
 
-debug: CFLAGS+=-DDEBUG_ON
+debug: CFLAGS+=-g
 debug: build
 
 main.o: main.c vector.h

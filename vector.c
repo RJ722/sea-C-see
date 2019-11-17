@@ -14,7 +14,7 @@ TODO:
 - [x] push(v)
 - [x] insert(v, index, item)
 - [x] prepend(v, item)
-- [ ] pop(v)
+- [x] pop(v)
 - [ ] delete(v, index)
 - [ ] remove(v, item)
 - [ ] find(v, item)
@@ -25,7 +25,6 @@ Clean by:
 - [x] Create a test file
 - [x] using a header file
 - [x] Use a makefile
-- [ ] Print additional info in DEBUG mode using `CFLAGS -DDEBUG_ON`
 */
 
 vector *create_vector(){
@@ -94,4 +93,13 @@ void prepend_in_vector(vector *v, int item){
 
     *(int *)(v->data) = item;
     v->size = v->size + 1;
+}
+
+int pop_vector(vector *v){
+    if (v->size >= 1){
+        int *last_addr = v->data + (v->size-- - 1) * sizeof(int);
+        return *(last_addr);
+    }
+    printf("Popping array of length 0. Exiting!");
+    exit(1);
 }

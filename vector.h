@@ -27,3 +27,4 @@ void resize_vector(vector *, int);
 void push_in_vector(vector *, int);
 void insert_in_vector(vector *, int, int);
 void prepend_in_vector(vector *, int);
+int pop_vector(vector *);

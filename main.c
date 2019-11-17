@@ -94,6 +94,18 @@ void test_prepend_in_vector(){
     printf("[INFO] Successfully passed 'test_prepend_in_vector'.\n");
 }
 
+void test_vector_pop(){
+    vector *v = create_vector();
+
+    push_in_vector(v, 10);
+    assert(v->size == 1);
+
+    int a = pop_vector(v);
+    assert(a == 10);
+    assert(v->size == 0);
+    printf("[INFO] Successfully passed 'test_vector_pop'.\n");
+}
+
 int main(){
     // test_vector_interactively();
     test_resize_vector();
@@ -101,6 +113,7 @@ int main(){
     test_vector_autoresizes_on_push();
     test_insert_in_middle();
     test_prepend_in_vector();
+    test_vector_pop();
 
     return 0;
 }
